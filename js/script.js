@@ -12,6 +12,27 @@ Trasformare la stringa foto in una immagine effettiva
 BONUS 2:
 Organizzare i singoli membri in card/schede e rendere la pagina gradevole. */
 
+// FUNZIONI --------------------------------------------------------
+
+
+function cardsCreate () {
+
+    for(i = 0; i < team.length; i++) {
+
+        // Creo le card 
+        const card = document.createElement('div');
+        card.classList.add('card');
+
+        container.append(card);
+
+    }
+
+}
+
+
+// Recupero elemento dalla pagina 
+
+const container = document.getElementById('team-box')
 
 
 // Array membri 
@@ -60,7 +81,14 @@ const team = [
     }
 ]
 
-console.log(team);
+console.table(team);
+
+
+
+cardsCreate();
+
+
+
 
 
 
