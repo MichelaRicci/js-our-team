@@ -15,24 +15,48 @@ Organizzare i singoli membri in card/schede e rendere la pagina gradevole. */
 // FUNZIONI --------------------------------------------------------
 
 
-function cardsCreate () {
+// function cardsCreate () {
 
-    for(i = 0; i < team.length; i++) {
+//     for (i = 0; i < team.length; i++) {
 
-        // Creo le card 
-        const card = document.createElement('div');
-        card.classList.add('card');
+//         const members = team[i];
 
-        container.append(card);
+//         console.log(members.name);
+//         console.log(members.role);
 
-    }
 
-}
+
+//         // Creo le card 
+//         const card = document.createElement('div');
+//         card.classList.add('card');
+
+//         container.appendChild(card);
+
+
+//         const img = document.createElement('img');
+//         img.classList.add('img');
+
+//         card.append(img);
+
+//         const name= document.createElement('h4');
+//         name.classList.add('name');
+
+//         card.append(name);
+
+//         const role = document.createElement('p');
+//         role.classList.add('role');
+
+//         card.append(role);
+
+
+//     }
+// }
 
 
 // Recupero elemento dalla pagina 
 
 const container = document.getElementById('team-box')
+let items = '';
 
 
 // Array membri 
@@ -81,14 +105,27 @@ const team = [
     }
 ]
 
+
+for (i = 0; i < team.length; i++) {
+    const members = team[i];
+
+
+    // Creo stringhe
+
+    for (const key in members) {
+        items += `<p>${members[key]}</p>`;
+    }
+}
+
 console.table(team);
 
 
-
-cardsCreate();
-
+// cardsCreate();
 
 
+// Stampo in pagina le stringhe 
+
+container.innerHTML  = items;
 
 
 
